@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Presentation</title>
+
+    <meta charset='utf-8' />
+    <link href='styles.css' rel='stylesheet' type='text/css' />
+    <link href="rainbow/themes/solarized-light.css" rel="stylesheet" type="text/css" />
+    <script src='google_slides.js'></script>
+    <script src="rainbow/rainbow.min.js"></script>
+    <script src="rainbow/language/generic.js"></script>
+    <script src="rainbow/language/ruby.js"></script>
+    <script src="rainbow/language/shell.js"></script>
+
+  </head>
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen template-default'>
+
+      <article>
+        <h1>My Ruby Toolkit</h1>
+        <h2 class="subtitle">Pry, Opal, and the mighty RubyMine</h2>
+        <p>by Chris Lemcke</p>
+      </article>
+      
+      <article>
+        <h3>RubyMine</h3>
+        <h4 class='subtitle'>http://www.jetbrains.com/ruby/</h4>
+        <ul class="build">
+          <li>A Better IDE</li>
+          <li>A Better VCS</li>
+          <li>A Better Editor</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>RubyMine: The IDE</h3>
+        <ul class="build">
+          <li>Dependency management (bundler, rvm)</li>
+          <li>Server and Rake integration</li>
+          <li class="subtitle">Rails Generators</li>
+          <li>Test integration</li>
+          <li>IDE-style debugger</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>RubyMine: The IDE</h3>
+        <h4 class="subtitle">Demonstration</h4>
+      </article>
+
+      <article>
+        <h3>RubyMine: The VCS</h3>
+        <ul class="build">
+          <li>Branch management</li>
+          <li>Excellent visual merge tool</li>
+          <li>Inline history</li>
+          <li>Git blame for selection</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>RubyMine: The VCS</h3>
+        <h4 class="subtitle">Demonstration</h4>
+      </article>
+
+      <article>
+        <h3>RubyMine: The Editor</h3>
+        <h4 class="subtitle">The Usuals</h4>
+        <ul class="build">
+          <li>Syntax highlighting</li>
+          <li>Code completion</li>
+          <li>Fuzzy file search</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>RubyMine: The Editor</h3>
+        <h4 class="subtitle">The Awesome</h4>
+        <ul class="build">
+          <li>Code definition</li>
+          <li>Automatic file saving</li>
+          <li>Optional Vim integration</li>
+          <li>Inline git history</li>
+          <li>Local file history</li>
+          <li>Code definition</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>RubyMine: The Editor</h3>
+        <h4 class="subtitle">Demonstration</h4>
+      </article>
+
+      <article>
+        <h3>RubyMine: The Downsides</h3>
+        <ul class="build">
+          <li>Requires learning a new tool</li>
+          <li>Requires significant memory footprint</li>
+          <li>Tests & Servers don't work well with legacy apps</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>RubyConf: Pry & More</h3>
+        <ul class="build">
+          <li>Pry</li>
+          <li>Opal</li>
+          <li>RubyConf impressions</li>
+        </ul>
+      </article>
+
+
+      <article>
+        <h3>Pry</h3>
+        <pre><code data-language="ruby">
+  group :development do
+    gem 'pry-plus'
+    gem 'pry-rails'
+  end
+        </code></pre>
+      </article>
+
+      <article>
+        <h3>Pry</h3>
+        <ul class="build">
+          <li>Basically IRB+</li>
+          <li>Scope sensitive</li>
+          <li>Live code editing</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Pry</h3>
+        <h4 class="subtitle">Demonstration</h4>
+      </article>
+
+      <article>
+        <h3>Pry</h3>
+        <h4 class="subtitle">Inspection</h4>
+        <dl class="build">
+          <dt><pre data-language="shell">ls</pre></dt><dd>View all available methods in the current scope</dd>
+          <dt><pre data-language="shell">cd</pre></dt><dd>Enter an object's scope</dd>
+          <dt><pre data-language="shell">$</pre></dt><dd>Show object or method source</dd>
+          <dt><pre data-language="shell">show-model</pre></dt><dd>Show rails model</dd>
+        </dl>
+      </article>
+
+      <article>
+        <h3>Pry</h3>
+        <h4 class="subtitle">Live Editing</h4>
+        <dl class="build">
+          <dt><pre data-language="shell">edit [source]</pre></dt><dd>Edit file for current scope, or specified object or method</dd>
+          <dt><pre data-language="shell">Pry.editor = "vi"</pre></dt><dd>Set current editor</dd>
+          <dt><pre data-language="shell">$EDITOR</pre></dt><dd>Alternatly, use an environment variable</dd>
+        </dl>
+      </article>
+
+      <article>
+        <h3>Pry</h3>
+        <h4 class="subtitle">Debugging</h4>
+        <dl class="build"><dt>Invoke pry from w/in rails app</dt>
+          <dd><pre data-language="ruby">binding.pry</pre></dd>
+          <dt>Standard debugging commands</dt>
+          <dd>
+            <pre data-language="ruby">whereami</pre>
+            <pre data-language="ruby">next</pre>
+            <pre data-language="ruby">step</pre>
+            <pre data-language="ruby">continue</pre>
+          </dd>
+        </dl>
+      </article>
+
+
+      <article>
+        <h3>Opal</h3>
+        <h4 class="subtitle">http://opalrb.org/try/</h4>
+        <ul class="build">
+          <li>Javascript Implementation of Ruby</li>
+          <li>Built-in JQuery and DOM integration</li>
+          <li>Rails integration with gem 'opal-rails'</li>
+          <li>Client side MVC Framework - Vienna</li>
+          <li><pre data-language='ruby'>$window = Native(`window`)</pre></li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Bonus!</h3>
+        <h4 class='subtitle'>A few extras for hanging in there ;)</h4>
+        <ul class="build">
+          <li>Better Errors<pre data-language="ruby">
+gem 'better_errors'
+gem 'binding_of_caller'
+          </pre> </li>
+          <li>
+            Rails Panel Chrome Extension
+            <pre data-language="ruby">gem 'meta_request'</pre>
+          </li>
+        </ul>
+      </article>
+
+
+      <article>
+        <h3>RubyMine Summary</h3>
+        <h4 class="subtitle">Damn right, it's better than yours</h4>
+        <ul class="build">
+          <li>A Better IDE</li>
+          <li>A Better VCS</li>
+          <li>A Better Editor</li>
+          <li class="subtitle">Code freakin' definition</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Pry Summary</h3>
+        <h4 class="subtitle">More than just a debugger</h4>
+        <ul class="build">
+          <li>Scope sensitive</li>
+          <li>Code definition</li>
+          <li>Live editing</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Opal Summary</h3>
+        <ul class="">
+          <li>Javascript Implementation of Ruby</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>RubyConf 2013 Summary</h3>
+        <h4 class="subtitle">What's Next?</h4>
+        <ul class="build">
+          <li>The web problem is "solved"</li>
+          <li>How can we improve performance?</li>
+          <li>Garbage collection</li>
+          <li>Math & science ruby</li>
+        </ul>
+      </article>
+
+
+      <article>
+        <h3>Links</h3>
+        <dl class="left">
+          <dt>RubyMine</dt>
+          <dd class="subtitle">http://www.jetbrains.com/ruby/download/</dd>
+          <dt>Pry</dt>
+          <dd class="subtitle">https://github.com/pry/pry</dd>
+          <dt>Opal</dt>
+          <dd class="subtitle">opalrb.org/try/#</dd>
+          <dt>Rails Panel</dt>
+          <dd class="subtitle">gem meta_request</dd>
+          <dd class="subtitle">google "Chrome RailsPanel" extension</dd>
+          <dt>These Slides</dt>
+          <dd class="subtitle">github.com/clemcke/rubyconf2013-slides/</dd>
+        </dl>
+        <img class="right" src="img/programming.gif" />
+      </article>
+
+    </section>
+
+  </body>
+</html>
